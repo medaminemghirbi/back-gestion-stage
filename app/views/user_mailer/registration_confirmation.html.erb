@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <h1>Welcome to Com&dev_system.com</h1>
+  <h1 style="color:green;"> Hi <%= @user.email %> </h1>
+
+    <h4>
+      You have successfully signed up  to Com&dev_system.com,
+      your username is: <%= @user.email %>.<br>
+      your account password is: <%= @user.password %>.<br>
+    </h4>
+    
+    <h4>
+      To login to the site, just follow this link to confirm account : <a href="<%= confirm_email_registration_url(@user.confirm_token) %>">click to confirm Inscription</a>.
+    </h4>
+    <p>Thanks for joining and have a great day !</p>
+    <h2 style="color:green;">Com & Dev WebMaster !</h2>
+  </body>
+</html>
