@@ -46,8 +46,22 @@ class AdminController < ApplicationController
         end
     end
 
+    def updateemployeebyadmin
+      @user = User.find(params[:id])
+      byebug
+      if @user.update(post_paramsadminemployee)
+        render json: @user, methods: [:user_image_url]
+  
+      else
+        render json: @user.errors, statut: :unprocessable_entity
+      end
+    end
+
     private
+    def post_paramsadminemployee
+      params.permit(:id, :email, :password, :adress, :lastname, :firstname, :avatar)
+  end
     def post_parasmadmin
         params.permit(:id, :email, :password, :adress, :lastname, :firstname, :avatar)
-      end
+    end
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get :employees, to: 'admin#getallemployees' 
   delete 'deleteemployee/:user_id', to: 'admin#deleteemployee' 
   patch '/updateadmin/:id', to: 'admin#updateadmin'
+  patch '/updateemployeebyadmin/:id', to: 'admin#updateemployeebyadmin'
   patch '/updateadminimage/:id', to: 'admin#updateimageadmin'
   get :countall, to: 'admin#countall' 
   

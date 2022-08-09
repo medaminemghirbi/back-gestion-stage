@@ -3748,3 +3748,959 @@ Processing by AdminController#getallemployees as HTML
 Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1558)
 
 
+Started POST "/sessions/" for ::1 at 2022-08-08 10:48:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@com-dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 679ms (Views: 36.3ms | ActiveRecord: 14.8ms | Allocations: 22496)
+
+
+Started GET "/countall/" for ::1 at 2022-08-08 10:48:45 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 4.4ms | Allocations: 2970)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:48:52 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 1.5ms | Allocations: 1580)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:50:02 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 1.3ms | Allocations: 1576)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:50:10 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 1.2ms | Allocations: 1577)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:50:17 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 1.2ms | Allocations: 1576)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:50:53 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 1.2ms | Allocations: 1557)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:51:14 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 1.1ms | Allocations: 1557)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:51:44 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 1.1ms | Allocations: 1557)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:53:52 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 1.1ms | Allocations: 1557)
+
+
+Started POST "/registrations/" for ::1 at 2022-08-08 10:54:55 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test.@gmail.com", "password"=>"[FILTERED]", "role"=>"employee"}, "registration"=>{"user"=>{"email"=>"test.@gmail.com", "password"=>"[FILTERED]", "role"=>"employee"}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:23:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test.@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:23:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "lastname", "firstname", "adress", "role", "created_at", "updated_at", "email_confirmed", "confirm_token") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "test.@gmail.com"], ["password_digest", "[FILTERED]"], ["lastname", nil], ["firstname", nil], ["adress", nil], ["role", 0], ["created_at", "2022-08-08 09:54:55.956389"], ["updated_at", "2022-08-08 09:54:55.956389"], ["email_confirmed", false], ["confirm_token", "[FILTERED]"]]
+  ↳ app/controllers/registrations_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:23:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/registration_confirmation.html.erb within layouts/mailer
+  Rendered user_mailer/registration_confirmation.html.erb within layouts/mailer (Duration: 2.8ms | Allocations: 476)
+  Rendered layout layouts/mailer.html.erb (Duration: 4.2ms | Allocations: 711)
+UserMailer#registration_confirmation: processed outbound mail in 18.0ms
+Delivered mail 62f0dd70a066_29782bac6029b@amine-ASUS-TUF-Gaming-F15-FX506HC-TUF506HC.mail (2109.4ms)
+Date: Mon, 08 Aug 2022 10:54:56 +0100
+From: COM-DEV@DevTeam.com
+To: test.@gmail.com
+Message-ID: <62f0dd70a066_29782bac6029b@amine-ASUS-TUF-Gaming-F15-FX506HC-TUF506HC.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <h1>Welcome to Com&dev_system.com</h1>
+  <h1 style="color:green;"> Hi test.@gmail.com </h1>
+
+    <h4>
+      You have successfully signed up  to Com&dev_system.com,
+      your username is: test.@gmail.com.<br>
+      your account password is: aaa.<br>
+    </h4>
+    
+    <h4>
+      To login to the site, just follow this link to confirm account : <a href="http://localhost:3000/registrations/wqx3ouTZ2dPrvnRjKxM2fA/confirm_email">click to confirm Inscription</a>.
+    </h4>
+    <p>Thanks for joining and have a great day !</p>
+    <h2 style="color:green;">Com & Dev WebMaster !</h2>
+  </body>
+</html>
+  </body>
+</html>
+
+Completed 200 OK in 2788ms (Views: 0.9ms | ActiveRecord: 3.4ms | Allocations: 36315)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:54:58 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 1.8ms | Allocations: 2519)
+
+
+Started GET "/registrations/wqx3ouTZ2dPrvnRjKxM2fA/confirm_email" for ::1 at 2022-08-08 10:55:14 +0100
+Processing by RegistrationsController#confirm_email as HTML
+  Parameters: {"id"=>"wqx3ouTZ2dPrvnRjKxM2fA"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirm_token" = $1 LIMIT $2[0m  [["confirm_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:5:in `confirm_email'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `confirm_email'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test.@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:9:in `confirm_email'
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "email_confirmed" = $2, "confirm_token" = $3 WHERE "users"."id" = $4[0m  [["updated_at", "2022-08-08 09:55:14.302102"], ["email_confirmed", true], ["confirm_token", "[FILTERED]"], ["id", 5]]
+  ↳ app/controllers/registrations_controller.rb:9:in `confirm_email'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `confirm_email'
+Redirected to http://localhost:4200
+Completed 302 Found in 19ms (ActiveRecord: 3.3ms | Allocations: 3376)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:55:16 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 1.7ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:55:45 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 1.7ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 10:57:41 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 1.9ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:14:46 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 37ms (Views: 10.3ms | ActiveRecord: 13.4ms | Allocations: 5557)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:15:26 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 2.2ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:15:40 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 2.0ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:15:52 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 1.3ms | Allocations: 2514)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:17:12 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 1.7ms | Allocations: 2513)
+
+
+Started GET "/countall/" for ::1 at 2022-08-08 11:33:43 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 12.0ms | Allocations: 3876)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:33:48 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 18ms (Views: 12.1ms | ActiveRecord: 2.8ms | Allocations: 2641)
+
+
+Started PATCH "/updateadminimage/3" for ::1 at 2022-08-08 11:34:14 +0100
+Processing by AdminController#updateimageadmin as HTML
+  Parameters: {"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f350d1b6c20 @tempfile=#<Tempfile:/tmp/RackMultipart20220808-10616-14t5vps.png>, @original_filename="Png.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"avatar\"; filename=\"Png.png\"\r\nContent-Type: image/png\r\n">, "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:22:in `updateimageadmin'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@com-dev.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+  [1m[36mActiveStorage::Blob Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "pf7fb1qimj4x3q5qvm22bk99mlia"], ["filename", "Png.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 61503], ["checksum", "OUK6d7YVKH1Yk7qydJXmFg=="], ["created_at", "2022-08-08 10:34:14.355105"]]
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+  [1m[36mActiveStorage::Attachment Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 3], ["blob_id", 2], ["created_at", "2022-08-08 10:34:14.360877"]]
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1 WHERE "users"."id" = $2[0m  [["updated_at", "2022-08-08 10:34:14.366019"], ["id", 3]]
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin_controller.rb:24:in `updateimageadmin'
+[36m  Disk Storage (1.1ms) [0m[32mUploaded file to key: pf7fb1qimj4x3q5qvm22bk99mlia (checksum: OUK6d7YVKH1Yk7qydJXmFg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 39bde350-1425-4dd5-83d4-71892044f923) to Async(default) with arguments: #<GlobalID:0x00007f350ce02c28 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/2>>
+Completed 200 OK in 144ms (Views: 2.5ms | ActiveRecord: 22.3ms | Allocations: 29548)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923]   [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923] Performing ActiveStorage::AnalyzeJob (Job ID: 39bde350-1425-4dd5-83d4-71892044f923) from Async(default) enqueued at 2022-08-08T10:34:14Z with arguments: #<GlobalID:0x00007f350cd925b8 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923] [36m  Disk Storage (0.4ms) [0m[34mDownloaded file from key: pf7fb1qimj4x3q5qvm22bk99mlia[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923]   [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39bde350-1425-4dd5-83d4-71892044f923] Performed ActiveStorage::AnalyzeJob (Job ID: 39bde350-1425-4dd5-83d4-71892044f923) from Async(default) in 33.87ms
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc0ef892fb16787224668c989081ab262c1a50cf/Png.png" for ::1 at 2022-08-08 11:34:15 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc0ef892fb16787224668c989081ab262c1a50cf", "filename"=>"Png"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (2.5ms) [0m[34mGenerated URL for file at key: pf7fb1qimj4x3q5qvm22bk99mlia (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMDozOToxNS4xMTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--7814cd1890a460643b4ec1771239c00b30df300e/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMDozOToxNS4xMTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--7814cd1890a460643b4ec1771239c00b30df300e/Png.png
+Completed 302 Found in 14ms (ActiveRecord: 0.7ms | Allocations: 2106)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMDozOToxNS4xMTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--7814cd1890a460643b4ec1771239c00b30df300e/Png.png" for ::1 at 2022-08-08 11:34:15 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:56:22 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 3.5ms | Allocations: 5501)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:57:10 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:57:12 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:59:26 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:59:36 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 11:59:53 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:00:37 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:01:05 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 2514)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:01:16 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 2513)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:02:23 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.6ms | Allocations: 2514)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:04:55 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 20ms (Views: 6.7ms | ActiveRecord: 4.8ms | Allocations: 12285)
+
+
+Started PATCH "/updateemployeebyadmin/4" for ::1 at 2022-08-08 12:05:19 +0100
+Processing by AdminController#updateemployeebyadmin as HTML
+  Parameters: {"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f350c9287e8 @tempfile=#<Tempfile:/tmp/RackMultipart20220808-10616-sb2giq.png>, @original_filename="Png.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"avatar\"; filename=\"Png.png\"\r\nContent-Type: image/png\r\n">, "firstname"=>"test", "lastname"=>"test", "adress"=>"test", "email"=>"riden5211@gmail.com", "password"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:50:in `updateemployeebyadmin'
+Completed 500 Internal Server Error in 6627ms (ActiveRecord: 2.2ms | Allocations: 61117)
+
+
+  
+NameError (undefined local variable or method `post_params' for #<AdminController:0x00000000012f20>
+Did you mean?  post_parasmadmin):
+  
+app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+Started PATCH "/updateemployeebyadmin/4" for ::1 at 2022-08-08 12:05:56 +0100
+Processing by AdminController#updateemployeebyadmin as HTML
+  Parameters: {"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f350cca7270 @tempfile=#<Tempfile:/tmp/RackMultipart20220808-10616-1vkqpbo.png>, @original_filename="Png.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"avatar\"; filename=\"Png.png\"\r\nContent-Type: image/png\r\n">, "firstname"=>"test", "lastname"=>"test", "adress"=>"test", "email"=>"riden5211@gmail.com", "password"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:50:in `updateemployeebyadmin'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "riden5211@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "lastname" = $2, "firstname" = $3, "adress" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["password_digest", "[FILTERED]"], ["lastname", "test"], ["firstname", "test"], ["adress", "test"], ["updated_at", "2022-08-08 11:05:57.797695"], ["id", 4]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "onvclyeoyzqpvuoxr9eldnoipffd"], ["filename", "Png.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 61503], ["checksum", "OUK6d7YVKH1Yk7qydJXmFg=="], ["created_at", "2022-08-08 11:05:57.806966"]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 4], ["blob_id", 3], ["created_at", "2022-08-08 11:05:57.808375"]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1 WHERE "users"."id" = $2[0m  [["updated_at", "2022-08-08 11:05:57.809492"], ["id", 4]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: onvclyeoyzqpvuoxr9eldnoipffd (checksum: OUK6d7YVKH1Yk7qydJXmFg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc) to Async(default) with arguments: #<GlobalID:0x00007f350c845880 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/3>>
+Completed 200 OK in 1668ms (Views: 0.7ms | ActiveRecord: 14.8ms | Allocations: 33704)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc] Performing ActiveStorage::AnalyzeJob (Job ID: 9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc) from Async(default) enqueued at 2022-08-08T11:05:57Z with arguments: #<GlobalID:0x00007f350c818330 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: onvclyeoyzqpvuoxr9eldnoipffd[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc] Performed ActiveStorage::AnalyzeJob (Job ID: 9308c5a9-af6d-4bd0-b36b-b13ac6e69cbc) from Async(default) in 8.33ms
+Started GET "/employees/" for ::1 at 2022-08-08 12:05:58 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 3553)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e7af51ef85af6ab65c84a68c03d128d577168933/Png.png" for ::1 at 2022-08-08 12:05:58 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e7af51ef85af6ab65c84a68c03d128d577168933", "filename"=>"Png"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: onvclyeoyzqpvuoxr9eldnoipffd (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjUyWTJ4NVpXOTVlbkZ3ZG5WdmVISTVaV3hrYm05cGNHWm1aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMDo1OC4xNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cd731225dbd1bc042549511bbe151ae1b077e9e/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjUyWTJ4NVpXOTVlbkZ3ZG5WdmVISTVaV3hrYm05cGNHWm1aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMDo1OC4xNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cd731225dbd1bc042549511bbe151ae1b077e9e/Png.png
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1486)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjUyWTJ4NVpXOTVlbkZ3ZG5WdmVISTVaV3hrYm05cGNHWm1aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMDo1OC4xNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cd731225dbd1bc042549511bbe151ae1b077e9e/Png.png" for ::1 at 2022-08-08 12:05:58 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:06:42 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.0ms | Allocations: 3369)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc0ef892fb16787224668c989081ab262c1a50cf/Png.png" for ::1 at 2022-08-08 12:06:44 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc0ef892fb16787224668c989081ab262c1a50cf", "filename"=>"Png"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: pf7fb1qimj4x3q5qvm22bk99mlia (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMTo0NC4xMTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--5e3cd5b7f9ab31dcb796eb4c8b691d8811eff056/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMTo0NC4xMTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--5e3cd5b7f9ab31dcb796eb4c8b691d8811eff056/Png.png
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1196)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMTo0NC4xMTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--5e3cd5b7f9ab31dcb796eb4c8b691d8811eff056/Png.png" for ::1 at 2022-08-08 12:06:44 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMTo0NC4xMTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--5e3cd5b7f9ab31dcb796eb4c8b691d8811eff056/Png.png" for ::1 at 2022-08-08 12:07:08 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:07:10 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 3369)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjUyWTJ4NVpXOTVlbkZ3ZG5WdmVISTVaV3hrYm05cGNHWm1aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMDo1OC4xNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cd731225dbd1bc042549511bbe151ae1b077e9e/Png.png" for ::1 at 2022-08-08 12:07:10 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:07:19 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.6ms | Allocations: 3373)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjUyWTJ4NVpXOTVlbkZ3ZG5WdmVISTVaV3hrYm05cGNHWm1aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMDo1OC4xNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cd731225dbd1bc042549511bbe151ae1b077e9e/Png.png" for ::1 at 2022-08-08 12:07:19 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:07:26 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.6ms | Allocations: 3371)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjUyWTJ4NVpXOTVlbkZ3ZG5WdmVISTVaV3hrYm05cGNHWm1aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMDo1OC4xNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cd731225dbd1bc042549511bbe151ae1b077e9e/Png.png" for ::1 at 2022-08-08 12:07:26 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 140)
+
+
+Started PATCH "/updateemployeebyadmin/5" for ::1 at 2022-08-08 12:07:51 +0100
+Processing by AdminController#updateemployeebyadmin as HTML
+  Parameters: {"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f350d16c800 @tempfile=#<Tempfile:/tmp/RackMultipart20220808-10616-106iolx.png>, @original_filename="Png.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"avatar\"; filename=\"Png.png\"\r\nContent-Type: image/png\r\n">, "firstname"=>"mohamed amine ", "lastname"=>"mghirbi", "adress"=>"kalla sghira", "email"=>"test.@gmail.com", "password"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:50:in `updateemployeebyadmin'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test.@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "lastname" = $2, "firstname" = $3, "adress" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["password_digest", "[FILTERED]"], ["lastname", "mghirbi"], ["firstname", "mohamed amine "], ["adress", "kalla sghira"], ["updated_at", "2022-08-08 11:07:53.473553"], ["id", 5]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "0iples1x9mp82ccxne5c4o45f1ia"], ["filename", "Png.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 61503], ["checksum", "OUK6d7YVKH1Yk7qydJXmFg=="], ["created_at", "2022-08-08 11:07:53.477651"]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 5], ["blob_id", 4], ["created_at", "2022-08-08 11:07:53.478816"]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1 WHERE "users"."id" = $2[0m  [["updated_at", "2022-08-08 11:07:53.479759"], ["id", 5]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 0iples1x9mp82ccxne5c4o45f1ia (checksum: OUK6d7YVKH1Yk7qydJXmFg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c5317666-2698-4f04-ace2-829df5d45d5b) to Async(default) with arguments: #<GlobalID:0x00007f350cd21840 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/4>>
+Completed 200 OK in 2171ms (Views: 0.5ms | ActiveRecord: 10.3ms | Allocations: 12232)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b] Performing ActiveStorage::AnalyzeJob (Job ID: c5317666-2698-4f04-ace2-829df5d45d5b) from Async(default) enqueued at 2022-08-08T11:07:53Z with arguments: #<GlobalID:0x00007f350ccd1d40 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 0iples1x9mp82ccxne5c4o45f1ia[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5317666-2698-4f04-ace2-829df5d45d5b] Performed ActiveStorage::AnalyzeJob (Job ID: c5317666-2698-4f04-ace2-829df5d45d5b) from Async(default) in 12.38ms
+Started GET "/employees/" for ::1 at 2022-08-08 12:07:53 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 4229)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2746f02860697aea5476709bb2564dfbd0000d62/Png.png" for ::1 at 2022-08-08 12:07:53 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2746f02860697aea5476709bb2564dfbd0000d62", "filename"=>"Png"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 0iples1x9mp82ccxne5c4o45f1ia (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMjo1My42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--81bf72a0b60e90a55fb831404c06a720f53ebfbb/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMjo1My42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--81bf72a0b60e90a55fb831404c06a720f53ebfbb/Png.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1291)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjUyWTJ4NVpXOTVlbkZ3ZG5WdmVISTVaV3hrYm05cGNHWm1aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMDo1OC4xNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cd731225dbd1bc042549511bbe151ae1b077e9e/Png.png" for ::1 at 2022-08-08 12:07:53 +0100
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMjo1My42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--81bf72a0b60e90a55fb831404c06a720f53ebfbb/Png.png" for ::1 at 2022-08-08 12:07:53 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started PATCH "/updateemployeebyadmin/4" for ::1 at 2022-08-08 12:08:24 +0100
+Processing by AdminController#updateemployeebyadmin as HTML
+  Parameters: {"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f35080a1b78 @tempfile=#<Tempfile:/tmp/RackMultipart20220808-10616-w9rzkb.png>, @original_filename="Png.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"avatar\"; filename=\"Png.png\"\r\nContent-Type: image/png\r\n">, "firstname"=>"amine", "lastname"=>"mghirbi", "adress"=>"kalla sghira", "email"=>"riden5211@gmail.com", "password"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:50:in `updateemployeebyadmin'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "riden5211@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "lastname" = $2, "firstname" = $3, "adress" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["password_digest", "[FILTERED]"], ["lastname", "mghirbi"], ["firstname", "amine"], ["adress", "kalla sghira"], ["updated_at", "2022-08-08 11:08:26.898107"], ["id", 4]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "55zv084hhd909u7wdq1t1gkbtwvo"], ["filename", "Png.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 61503], ["checksum", "OUK6d7YVKH1Yk7qydJXmFg=="], ["created_at", "2022-08-08 11:08:26.902699"]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "User"], ["record_id", 4], ["blob_id", 5], ["created_at", "2022-08-08 11:08:26.903730"]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1 WHERE "users"."id" = $2[0m  [["updated_at", "2022-08-08 11:08:26.904622"], ["id", 4]]
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin_controller.rb:52:in `updateemployeebyadmin'
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 55zv084hhd909u7wdq1t1gkbtwvo (checksum: OUK6d7YVKH1Yk7qydJXmFg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 859472fd-6316-458b-a7c3-6c64ccf257f3) to Async(default) with arguments: #<GlobalID:0x0000560fd6daa4a8 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/5>>
+Completed 200 OK in 2694ms (Views: 0.4ms | ActiveRecord: 10.5ms | Allocations: 13049)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3] Performing ActiveStorage::AnalyzeJob (Job ID: 859472fd-6316-458b-a7c3-6c64ccf257f3) from Async(default) enqueued at 2022-08-08T11:08:26Z with arguments: #<GlobalID:0x0000560fd6d647a0 @uri=#<URI::GID gid://back-gestion-stage/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 55zv084hhd909u7wdq1t1gkbtwvo[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [859472fd-6316-458b-a7c3-6c64ccf257f3] Performed ActiveStorage::AnalyzeJob (Job ID: 859472fd-6316-458b-a7c3-6c64ccf257f3) from Async(default) in 9.78ms
+Started GET "/employees/" for ::1 at 2022-08-08 12:08:27 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 4230)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ad2ede02ef53ed3894bf15d9866e56524141fe86/Png.png" for ::1 at 2022-08-08 12:08:27 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ad2ede02ef53ed3894bf15d9866e56524141fe86", "filename"=>"Png"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: 55zv084hhd909u7wdq1t1gkbtwvo (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMzoyNy4wNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54414ac9a7179bd1b4569e2bdcaedcf43d265a8d/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMzoyNy4wNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54414ac9a7179bd1b4569e2bdcaedcf43d265a8d/Png.png
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1275)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMjo1My42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--81bf72a0b60e90a55fb831404c06a720f53ebfbb/Png.png" for ::1 at 2022-08-08 12:08:27 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMzoyNy4wNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54414ac9a7179bd1b4569e2bdcaedcf43d265a8d/Png.png" for ::1 at 2022-08-08 12:08:27 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMTo0NC4xMTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--5e3cd5b7f9ab31dcb796eb4c8b691d8811eff056/Png.png" for ::1 at 2022-08-08 12:09:02 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+Started GET "/countall/" for ::1 at 2022-08-08 12:09:04 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 3722)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:09:06 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 4230)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMjo1My42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--81bf72a0b60e90a55fb831404c06a720f53ebfbb/Png.png" for ::1 at 2022-08-08 12:09:06 +0100
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMzoyNy4wNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54414ac9a7179bd1b4569e2bdcaedcf43d265a8d/Png.png" for ::1 at 2022-08-08 12:09:06 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+Started GET "/countall/" for ::1 at 2022-08-08 12:09:08 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1013)
+
+
+Started GET "/employees/" for ::1 at 2022-08-08 12:09:09 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.7ms | Allocations: 4230)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMjo1My42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--81bf72a0b60e90a55fb831404c06a720f53ebfbb/Png.png" for ::1 at 2022-08-08 12:09:09 +0100
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOFQxMToxMzoyNy4wNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54414ac9a7179bd1b4569e2bdcaedcf43d265a8d/Png.png" for ::1 at 2022-08-08 12:09:09 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-09 12:50:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@com-dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 244ms (Views: 40.8ms | ActiveRecord: 6.9ms | Allocations: 41617)
+
+
+Started GET "/countall/" for ::1 at 2022-08-09 12:50:29 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2970)
+
+
+Started GET "/employees/" for ::1 at 2022-08-09 12:50:41 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.5ms | Allocations: 4254)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2746f02860697aea5476709bb2564dfbd0000d62/Png.png" for ::1 at 2022-08-09 12:50:41 +0100
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ad2ede02ef53ed3894bf15d9866e56524141fe86/Png.png" for ::1 at 2022-08-09 12:50:41 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2746f02860697aea5476709bb2564dfbd0000d62", "filename"=>"Png"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ad2ede02ef53ed3894bf15d9866e56524141fe86", "filename"=>"Png"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (2.7ms) [0m[34mGenerated URL for file at key: 0iples1x9mp82ccxne5c4o45f1ia (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo0MS4yODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--8f706d75acf445cd7a64f7898491bf549dca1477/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo0MS4yODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--8f706d75acf445cd7a64f7898491bf549dca1477/Png.png
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 4578)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNR2x3YkdWek1YZzViWEE0TW1OamVHNWxOV00wYnpRMVpqRnBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo0MS4yODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--8f706d75acf445cd7a64f7898491bf549dca1477/Png.png" for ::1 at 2022-08-09 12:50:41 +0100
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: 55zv084hhd909u7wdq1t1gkbtwvo (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo0MS4yOTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--758cd16e89ea7f3abc9eec875c256289d5b5d9fd/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo0MS4yOTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--758cd16e89ea7f3abc9eec875c256289d5b5d9fd/Png.png
+Completed 302 Found in 13ms (ActiveRecord: 5.1ms | Allocations: 9820)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOVFY2ZGpBNE5HaG9aRGt3T1hVM2QyUnhNWFF4WjJ0aWRIZDJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo0MS4yOTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--758cd16e89ea7f3abc9eec875c256289d5b5d9fd/Png.png" for ::1 at 2022-08-09 12:50:41 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started DELETE "/deleteemployee/5" for ::1 at 2022-08-09 12:50:48 +0100
+Processing by AdminController#deleteemployee as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:17:in `deleteemployee'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin_controller.rb:18:in `deleteemployee'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_controller.rb:18:in `deleteemployee'
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/admin_controller.rb:18:in `deleteemployee'
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/admin_controller.rb:18:in `deleteemployee'
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin_controller.rb:18:in `deleteemployee'
+No template found for AdminController#deleteemployee, rendering head :no_content
+Completed 204 No Content in 17ms (ActiveRecord: 9.5ms | Allocations: 4464)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc0ef892fb16787224668c989081ab262c1a50cf/Png.png" for ::1 at 2022-08-09 12:50:52 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc0ef892fb16787224668c989081ab262c1a50cf", "filename"=>"Png"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: pf7fb1qimj4x3q5qvm22bk99mlia (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo1Mi44MzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--55cd0340e98f346f18015d369a0bf762f4943255/Png.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo1Mi44MzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--55cd0340e98f346f18015d369a0bf762f4943255/Png.png
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1199)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjR1kzWm1JeGNXbHRhalI0TTNFMWNYWnRNakppYXprNWJXeHBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdVp5NXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjFCdVp5NXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0wOVQxMTo1NTo1Mi44MzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--55cd0340e98f346f18015d369a0bf762f4943255/Png.png" for ::1 at 2022-08-09 12:50:52 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Png"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
