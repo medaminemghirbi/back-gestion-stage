@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   patch '/updateemployeebyadmin/:id', to: 'admin#updateemployeebyadmin'
   patch '/updateadminimage/:id', to: 'admin#updateimageadmin'
   get :countall, to: 'admin#countall' 
-  
+  resources :motifs, only: %i[create index show update destroy]
 end
