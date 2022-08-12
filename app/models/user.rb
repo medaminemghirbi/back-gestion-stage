@@ -18,7 +18,7 @@ class User < ApplicationRecord
   def confirmation_token
     self.confirm_token = SecureRandom.urlsafe_base64.to_s if confirm_token.blank?
   end
-
+  has_many :demande , dependent: :destroy
 
   #def send_password_reset
    # generate_token(:password_reset_token)
