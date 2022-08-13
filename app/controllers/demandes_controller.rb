@@ -1,8 +1,8 @@
 class DemandesController < ApplicationController
     #include CurrentUserConcern
     def index
-        render json: Demande.all.order(id: :ASC)  
-      end
+        render json: Demande.all.order(id: :ASC), include: [  :user, :motif   ]  
+    end
     
       def create
       
