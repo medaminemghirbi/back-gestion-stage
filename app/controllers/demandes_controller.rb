@@ -26,9 +26,19 @@ class DemandesController < ApplicationController
     
       def update
         @demande = Demande.find(params[:id])
-        if @demande.update(post_params2)
+        byebug
+        if post_params2[:status] =="encours" || post_params2[:status] =="refused" 
+          @demande.update(post_params2)
+          render json: @demande, include: [:user, :motif]
+        elsif post_params2[:status] =="accepted"
+          demande_days = (@demande.days).to_f
+          @user = User.where("id = ?" ,  @demande.user_id )   
+          balance_days = @user.pluck(:nbr_days).join(',').to_f       
+          result = (balance_days-demande_days).to_f    
+          @demande.update(post_params2) 
+          @user.update_all(:nbr_days => result)
+         
           render json: @demande, include: [  :user, :motif   ]
-    
         else
           render json: @demande.errors, statut: :unprocessable_entity
         end
@@ -52,7 +62,7 @@ class DemandesController < ApplicationController
     
       def post_params2
         # lazm tbaath kol shy fl update
-        params.permit(:start_date, :end_date, :motif_id, :status, :user_id )
+        params.permit(:start_date, :end_date, :refus_reason, :motif_id, :status, :user_id )
       end
 
     
