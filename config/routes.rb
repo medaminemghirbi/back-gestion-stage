@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :demandes, only: %i[create index show update destroy]
 
   get 'getdemandebyemployee/:user_id', to: 'demandes#getdemandebyemployee'
+  patch '/updatedays/:id', to: 'demandes#updatedays'
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_12_094411) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_14_001922) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_12_094411) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "motif_id"
+    t.integer "days"
     t.index ["motif_id"], name: "index_demandes_on_motif_id"
     t.index ["user_id", "motif_id"], name: "index_demandes_on_user_id_and_motif_id", unique: true
     t.index ["user_id"], name: "index_demandes_on_user_id"
@@ -73,7 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_12_094411) do
     t.datetime "updated_at", null: false
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
-    t.integer "nbr_days", default: 20
+    t.float "nbr_days", default: 20.0
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

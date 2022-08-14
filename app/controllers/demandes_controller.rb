@@ -7,6 +7,9 @@ class DemandesController < ApplicationController
       def create
       
         @demande = Demande.new(post_params) 
+        days= ((@demande.end_date.to_date - @demande.start_date.to_date).to_i)+1
+        
+        @demande.update_attribute(:days,days)
         if @demande.save
     
           render json: @demande, statut: :created, location: @demande , include: [  :user, :motif  ]
