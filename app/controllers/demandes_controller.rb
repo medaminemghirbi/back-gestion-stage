@@ -1,7 +1,8 @@
 class DemandesController < ApplicationController
     #include CurrentUserConcern
     def index
-        render json: Demande.all.order(id: :ASC), include: [  :user, :motif   ]  
+      
+        render json: Demande.all.order(id: :ASC).paginate(:page => params[:page], :per_page => 10), include: [  :user, :motif   ]  
     end
     
       def create
@@ -26,7 +27,7 @@ class DemandesController < ApplicationController
     
       def update
         @demande = Demande.find(params[:id])
-        byebug
+        
         if post_params2[:status] =="encours" || post_params2[:status] =="refused" 
           @demande.update(post_params2)
           render json: @demande, include: [:user, :motif]
@@ -54,6 +55,24 @@ class DemandesController < ApplicationController
         @demande = Demande.where(user_id: params[:user_id])
         render json: @demande , include: [  :user, :motif   ]
     end
+    def get_count_of_demandes_by_employee
+      ids = []
+      @accepteddemandes = Demande.where('status = ?', status = 2).where(user_id:  params[:user_id] ).count
+      @refuseddemande = Demande.where('status = ?', status = 1).where(user_id:  params[:user_id] ).count
+      @encoursdemande = Demande.where('status = ?', status = 0).where(user_id:  params[:user_id] ).count
+
+      @allemployeedemande = Demande.where(user_id:  params[:user_id] ).count
+      render json: {
+        accepted: @accepteddemandes ,
+        refused: @refuseddemande,
+        encours: @encoursdemande,
+        alldemande: @allemployeedemande
+  
+      }  
+    end
+  
+
+
       private
     
       def post_params

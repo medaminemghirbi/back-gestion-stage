@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   get :countall, to: 'admin#countall' 
   resources :motifs, only: %i[create index show update destroy]
   resources :demandes, only: %i[create index show update destroy]
-
+  resources :password_resets
   get 'getdemandebyemployee/:user_id', to: 'demandes#getdemandebyemployee'
   patch '/updatedays/:id', to: 'demandes#updatedays'
+  get 'get_count_of_demandes_by_employee/:user_id', to: 'demandes#get_count_of_demandes_by_employee'
+
 end

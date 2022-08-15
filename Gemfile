@@ -12,6 +12,7 @@ gem "pg", "~> 1.4.3"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 gem 'byebug', '~> 9.0', '>= 9.0.6'
+gem 'will_paginate', '~> 3.0'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

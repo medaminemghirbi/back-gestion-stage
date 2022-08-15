@@ -8,11 +8,17 @@ class AdminController < ApplicationController
     def countall
       @userscount = User.all.count
       @requestcount = Demande.all.count
+      @accepteddemandes = Demande.where('status = ?', status = 2).count
+      @refuseddemandes = Demande.where('status = ?', status = 1).count
       render json: {
-        data: [@userscount, @requestcount]
+        data: [@userscount, @requestcount,@accepteddemandes , @refuseddemandes]
   
       }
     end
+
+
+
+
     def deleteemployee
         @user = User.find(params[:user_id])
         @user.destroy
@@ -48,7 +54,7 @@ class AdminController < ApplicationController
 
     def updateemployeebyadmin
       @user = User.find(params[:id])
-      byebug
+   
       if @user.update(post_paramsadminemployee)
         render json: @user, methods: [:user_image_url]
   
