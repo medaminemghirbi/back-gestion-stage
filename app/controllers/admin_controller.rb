@@ -6,7 +6,7 @@ class AdminController < ApplicationController
         render json: @users, methods: [:user_image_url]
     end
     def countall
-      @userscount = User.all.count
+      @userscount = User.where('role = ?', role = 0).count
       @requestcount = Demande.all.count
       @accepteddemandes = Demande.where('status = ?', status = 2).count
       @refuseddemandes = Demande.where('status = ?', status = 1).count

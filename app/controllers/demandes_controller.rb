@@ -6,7 +6,7 @@ class DemandesController < ApplicationController
     end
     
       def create
-      
+        
         @demande = Demande.new(post_params) 
         days= ((@demande.end_date.to_date - @demande.start_date.to_date).to_i)+1
         
@@ -76,12 +76,12 @@ class DemandesController < ApplicationController
       private
     
       def post_params
-        params.permit(:start_date, :end_date, :motif_id, :status, :user_id )
+        params.permit(:start_date, :end_date, :motif_id, :status, :user_id, :description)
       end
     
       def post_params2
         # lazm tbaath kol shy fl update
-        params.permit(:start_date, :end_date, :refus_reason, :motif_id, :status, :user_id )
+        params.permit(:start_date, :end_date,:description, :refus_reason, :motif_id, :status, :user_id )
       end
 
     

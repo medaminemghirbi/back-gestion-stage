@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_15_131634) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_16_101017) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_131634) do
     t.integer "user_id"
     t.integer "motif_id"
     t.integer "days"
+    t.string "description"
     t.index ["motif_id"], name: "index_demandes_on_motif_id"
     t.index ["user_id", "motif_id"], name: "index_demandes_on_user_id_and_motif_id", unique: true
     t.index ["user_id"], name: "index_demandes_on_user_id"
