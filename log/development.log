@@ -44551,3 +44551,1376 @@ Processing by PasswordResetsController#update as HTML
 Completed 200 OK in 198ms (Views: 0.1ms | ActiveRecord: 9.6ms | Allocations: 3273)
 
 
+Started POST "/sessions/" for ::1 at 2022-08-17 11:32:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "riden5211@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 220ms (Views: 30.4ms | ActiveRecord: 8.6ms | Allocations: 44094)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:32:17 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.8ms | Allocations: 6146)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:32:20 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:32:20 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1111)
+
+
+Processing by MotifsController#index as HTML
+  [1m[36mMotif Load (0.5ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 2.0ms | Allocations: 4377)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:32:23 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 2228)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:32:26 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (2.5ms) [0m[34mGenerated URL for file at key: 4qpyzhp6mnl1xw276f05zn0uk6nf (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMDozNzoyNi44NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9a6a198ccd3d7f14d15874ace6e0ec319eccba70/295828077_169248752302398_7056218145136454370_n.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMDozNzoyNi44NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9a6a198ccd3d7f14d15874ace6e0ec319eccba70/295828077_169248752302398_7056218145136454370_n.jpg
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 3325)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMDozNzoyNi44NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9a6a198ccd3d7f14d15874ace6e0ec319eccba70/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:32:26 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:32:28 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 2209)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:32:28 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:32:28 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by MotifsController#index as HTML
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 2102)
+
+
+  [1m[36mMotif Load (0.3ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 3.0ms | Allocations: 5042)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-17 11:32:36 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@com-dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 180ms (Views: 3.1ms | ActiveRecord: 0.9ms | Allocations: 2604)
+
+
+Started GET "/countall/" for ::1 at 2022-08-17 11:32:36 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (role = 0)[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2)[0m
+  ↳ app/controllers/admin_controller.rb:11:in `countall'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1)[0m
+  ↳ app/controllers/admin_controller.rb:12:in `countall'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 2047)
+
+
+Started GET "/employees/" for ::1 at 2022-08-17 11:32:38 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 2469)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMDozNzoyNi44NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9a6a198ccd3d7f14d15874ace6e0ec319eccba70/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:32:38 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:32:44 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 783)
+
+
+Started GET "/motifs/" for ::1 at 2022-08-17 11:32:46 +0100
+Processing by MotifsController#index as HTML
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started GET "/employees/" for ::1 at 2022-08-17 11:32:48 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 2464)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f861a4e77cc5d687fcc246974c2269fd4aa4a26/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:32:55 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f861a4e77cc5d687fcc246974c2269fd4aa4a26", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: cl491xnp0iqrgy4t0btwzowem0d7 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMncwT1RGNGJuQXdhWEZ5WjNrMGREQmlkSGQ2YjNkbGJUQmtOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMDozNzo1NS41NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--fa43c44fe90f49bda6ecb8599c19022774916a02/295828077_169248752302398_7056218145136454370_n.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMncwT1RGNGJuQXdhWEZ5WjNrMGREQmlkSGQ2YjNkbGJUQmtOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMDozNzo1NS41NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--fa43c44fe90f49bda6ecb8599c19022774916a02/295828077_169248752302398_7056218145136454370_n.jpg
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1194)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMncwT1RGNGJuQXdhWEZ5WjNrMGREQmlkSGQ2YjNkbGJUQmtOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMDozNzo1NS41NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--fa43c44fe90f49bda6ecb8599c19022774916a02/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:32:55 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/employees/" for ::1 at 2022-08-17 11:37:09 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 2463)
+
+
+Started GET "/motifs/" for ::1 at 2022-08-17 11:37:17 +0100
+Processing by MotifsController#index as HTML
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started GET "/countall/" for ::1 at 2022-08-17 11:37:19 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (role = 0)[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2)[0m
+  ↳ app/controllers/admin_controller.rb:11:in `countall'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1)[0m
+  ↳ app/controllers/admin_controller.rb:12:in `countall'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2015)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-17 11:37:34 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "riden5211@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 183ms (Views: 2.5ms | ActiveRecord: 1.0ms | Allocations: 2466)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:37:34 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2210)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:37:36 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:37:36 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Processing by MotifsController#index as HTML
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:37:44 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 749)
+
+
+Started POST "/demandes/" for ::1 at 2022-08-17 11:38:06 +0100
+Processing by DemandesController#create as HTML
+  Parameters: {"start_date"=>"2022-10-17", "end_date"=>"2022-10-18", "description"=>"need some rest", "user_id"=>"13", "motif_id"=>"5"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/demandes_controller.rb:13:in `create'
+  [1m[36mDemande Create (0.9ms)[0m  [1m[32mINSERT INTO "demandes" ("start_date", "end_date", "status", "refus_reason", "created_at", "updated_at", "user_id", "motif_id", "days", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["start_date", "2022-10-17"], ["end_date", "2022-10-18"], ["status", 0], ["refus_reason", nil], ["created_at", "2022-08-17 10:38:06.047608"], ["updated_at", "2022-08-17 10:38:06.047608"], ["user_id", 13], ["motif_id", 5], ["days", 2], ["description", "need some rest"]]
+  ↳ app/controllers/demandes_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/demandes_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/demandes_controller.rb:14:in `create'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/demandes_controller.rb:14:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:16:in `create'
+Completed 200 OK in 16ms (Views: 1.9ms | ActiveRecord: 3.3ms | Allocations: 10557)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:38:06 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:38:06 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Processing by MotifsController#index as HTML
+  [1m[36mMotif Load (0.3ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.7ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 3272)
+
+
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 2351)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:38:08 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 2634)
+
+
+Started PATCH "/demandes/68" for ::1 at 2022-08-17 11:38:13 +0100
+Processing by DemandesController#update as HTML
+  Parameters: {"status"=>"accepted", "refus_reason"=>"null", "id"=>"68"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id. Context: { controller: DemandesController, action: update, request: #<ActionDispatch::Request:0x00007f8b94dce958>, params: {"status"=>"accepted", "refus_reason"=>"null", "controller"=>"demandes", "action"=>"update", "id"=>"68"} }[0m
+[31mUnpermitted parameter: :id. Context: { controller: DemandesController, action: update, request: #<ActionDispatch::Request:0x00007f8b94dce958>, params: {"status"=>"accepted", "refus_reason"=>"null", "controller"=>"demandes", "action"=>"update", "id"=>"68"} }[0m
+[31mUnpermitted parameter: :id. Context: { controller: DemandesController, action: update, request: #<ActionDispatch::Request:0x00007f8b94dce958>, params: {"status"=>"accepted", "refus_reason"=>"null", "controller"=>"demandes", "action"=>"update", "id"=>"68"} }[0m
+  [1m[36mUser Pluck (0.3ms)[0m  [1m[34mSELECT "users"."nbr_days" FROM "users" WHERE (id = 13)[0m
+  ↳ app/controllers/demandes_controller.rb:37:in `update'
+[31mUnpermitted parameter: :id. Context: { controller: DemandesController, action: update, request: #<ActionDispatch::Request:0x00007f8b94dce958>, params: {"status"=>"accepted", "refus_reason"=>"null", "controller"=>"demandes", "action"=>"update", "id"=>"68"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/demandes_controller.rb:39:in `update'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:39:in `update'
+  [1m[36mDemande Update (0.4ms)[0m  [1m[33mUPDATE "demandes" SET "status" = $1, "refus_reason" = $2, "updated_at" = $3 WHERE "demandes"."id" = $4[0m  [["status", 2], ["refus_reason", "null"], ["updated_at", "2022-08-17 10:38:13.696617"], ["id", 68]]
+  ↳ app/controllers/demandes_controller.rb:39:in `update'
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/demandes_controller.rb:39:in `update'
+  [1m[36mUser Update All (0.9ms)[0m  [1m[33mUPDATE "users" SET "nbr_days" = $1 WHERE (id = 13)[0m  [["nbr_days", 18.0]]
+  ↳ app/controllers/demandes_controller.rb:40:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:42:in `update'
+Completed 200 OK in 20ms (Views: 2.2ms | ActiveRecord: 10.8ms | Allocations: 5753)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:38:13 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 2632)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:38:18 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:38:18 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by MotifsController#index as HTML
+  [1m[36mDemande Load (0.5ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.7ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 1679)
+
+
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.2ms | Allocations: 4511)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:38:19 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:38:20 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:38:20 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:38:21 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:38:21 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:38:21 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:38:21 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2210)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:38:31 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 2631)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:39:40 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.3ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.8ms | Allocations: 2631)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:39:40 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:39:41 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2210)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:43:06 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.3ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.8ms | Allocations: 2631)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:43:06 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:43:06 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 3277)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:43:11 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.3ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 2632)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:43:34 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:43:34 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+Processing by SessionsController#logged_in as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  [1m[36mDemande Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:43:34 +0100
+  [1m[36mDemande Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 3832)
+
+
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.3ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 2631)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:43:42 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 2631)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:43:42 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:43:42 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 3285)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-17 11:43:58 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "riden5211@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 184ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 2466)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:43:58 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:43:58 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 90)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 3308)
+
+
+Started GET "/motifs/" for ::1 at 2022-08-17 11:44:28 +0100
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:44:28 +0100
+Processing by MotifsController#index as HTML
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mMotif Load (0.6ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 2397)
+
+
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 4.0ms | Allocations: 7050)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:44:29 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:44:29 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 3293)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:44:32 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:44:32 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 3346)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:44:33 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:44:33 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by MotifsController#index as HTML
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.9ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 1703)
+
+
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 1.0ms | Allocations: 4445)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:44:34 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:44:34 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  [1m[36mDemande Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 3237)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-17 11:44:46 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "riden5211@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 181ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 2498)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:44:46 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:44:46 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 3240)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:45:30 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 2634)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:45:30 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:45:30 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 3225)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:46:06 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.4ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 2631)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:46:06 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:46:06 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 3247)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:46:42 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:46:42 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by MotifsController#index as HTML
+  [1m[36mDemande Load (0.6ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.8ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 2173)
+
+
+  [1m[36mMotif Load (0.7ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.5ms | Allocations: 4470)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:46:42 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:46:42 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 3239)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:47:12 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.4ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 2631)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:47:12 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:47:12 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 90)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 3.2ms | Allocations: 3267)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:47:21 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 2631)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:47:21 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2210)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:47:22 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 2210)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:47:26 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:47:26 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by MotifsController#index as HTML
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.4ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1703)
+
+
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.2ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 4479)
+
+
+Started GET "/demandes/?p=${10}" for ::1 at 2022-08-17 11:48:02 +0100
+Processing by DemandesController#index as HTML
+  Parameters: {"p"=>"${10}"}
+  [1m[36mDemande Load (0.2ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" ORDER BY "demandes"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+  [1m[36mMotif Load (0.1ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2631)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-17 11:48:02 +0100
+Started GET "/motifs/" for ::1 at 2022-08-17 11:48:02 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by MotifsController#index as HTML
+  [1m[36mDemande Load (0.5ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.7ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 2174)
+
+
+  [1m[36mMotif Load (1.0ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 1.6ms | Allocations: 4504)
+
+
+Started GET "/logged_in/" for ::1 at 2022-08-17 11:48:08 +0100
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 11:48:08 +0100
+Processing by SessionsController#logged_in as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2210)
+
+
+Started GET "/employees/" for ::1 at 2022-08-17 11:56:45 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 3.0ms | Allocations: 5565)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:56:45 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: 4qpyzhp6mnl1xw276f05zn0uk6nf (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMTowMTo0NS4wNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--f4fb263f09366c83267d0871a24de5b61c76a7f6/295828077_169248752302398_7056218145136454370_n.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMTowMTo0NS4wNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--f4fb263f09366c83267d0871a24de5b61c76a7f6/295828077_169248752302398_7056218145136454370_n.jpg
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1194)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMTowMTo0NS4wNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--f4fb263f09366c83267d0871a24de5b61c76a7f6/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:56:45 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/employees/" for ::1 at 2022-08-17 11:57:23 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 2463)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMTowMTo0NS4wNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--f4fb263f09366c83267d0871a24de5b61c76a7f6/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 11:57:23 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/employees/" for ::1 at 2022-08-17 13:30:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 46ms (Views: 24.5ms | ActiveRecord: 7.8ms | Allocations: 43984)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 13:30:46 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (2.4ms) [0m[34mGenerated URL for file at key: 4qpyzhp6mnl1xw276f05zn0uk6nf (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMjozNTo0Ni43NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--90ae4219902c5a7e52ca24bca5a0ec31fbb9799d/295828077_169248752302398_7056218145136454370_n.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMjozNTo0Ni43NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--90ae4219902c5a7e52ca24bca5a0ec31fbb9799d/295828077_169248752302398_7056218145136454370_n.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 3330)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMjozNTo0Ni43NzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--90ae4219902c5a7e52ca24bca5a0ec31fbb9799d/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 13:30:46 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-17 13:30:55 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "riden5211@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 186ms (Views: 2.9ms | ActiveRecord: 1.1ms | Allocations: 2619)
+
+
+Started GET "/logged_in/" for ::1 at 2022-08-17 13:30:55 +0100
+Processing by SessionsController#logged_in as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 88)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 13:30:55 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 6151)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 13:32:16 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 13:32:16 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 90)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 3315)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 13:36:06 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 13:36:06 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 3273)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 13:36:26 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: 4qpyzhp6mnl1xw276f05zn0uk6nf (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMjo0MToyNi4zNjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cbd8b660687a75e1bf17661378e75ebca71dabd/295828077_169248752302398_7056218145136454370_n.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMjo0MToyNi4zNjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cbd8b660687a75e1bf17661378e75ebca71dabd/295828077_169248752302398_7056218145136454370_n.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms | Allocations: 1199)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0xN1QxMjo0MToyNi4zNjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cbd8b660687a75e1bf17661378e75ebca71dabd/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-17 13:36:26 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-17 13:36:28 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-17 13:36:28 +0100
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mDemande Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 4.3ms | Allocations: 3305)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-18 11:45:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"riden5211@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "riden5211@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 244ms (Views: 33.8ms | ActiveRecord: 8.7ms | Allocations: 44094)
+
+
+Started GET "/get_count_of_demandes_by_employee/13" for ::1 at 2022-08-18 11:45:44 +0100
+Started GET "/logged_in/" for ::1 at 2022-08-18 11:45:44 +0100
+Processing by SessionsController#logged_in as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 89)
+
+
+Processing by DemandesController#get_count_of_demandes_by_employee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:60:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:61:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 0) AND "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:62:in `get_count_of_demandes_by_employee'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:64:in `get_count_of_demandes_by_employee'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 6170)
+
+
+Started GET "/getdemandebyemployee/13" for ::1 at 2022-08-18 11:45:51 +0100
+Started GET "/motifs/" for ::1 at 2022-08-18 11:45:51 +0100
+Processing by DemandesController#getdemandebyemployee as HTML
+  Parameters: {"user_id"=>"13"}
+  [1m[36mDemande Load (0.5ms)[0m  [1m[34mSELECT "demandes".* FROM "demandes" WHERE "demandes"."user_id" = $1[0m  [["user_id", 13]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Processing by MotifsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+  [1m[36mMotif Load (0.5ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" WHERE "motifs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/demandes_controller.rb:56:in `getdemandebyemployee'
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 3.7ms | Allocations: 16016)
+
+
+  [1m[36mMotif Load (0.6ms)[0m  [1m[34mSELECT "motifs".* FROM "motifs" ORDER BY "motifs"."id" ASC[0m
+  ↳ app/controllers/motifs_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 1.5ms | ActiveRecord: 4.0ms | Allocations: 15274)
+
+
+Started POST "/sessions/" for ::1 at 2022-08-20 12:44:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"admin@com-dev.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@com-dev.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 231ms (Views: 31.3ms | ActiveRecord: 8.5ms | Allocations: 44094)
+
+
+Started GET "/countall/" for ::1 at 2022-08-20 12:44:06 +0100
+Processing by AdminController#countall as HTML
+  [1m[36mUser Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (role = 0)[0m
+  ↳ app/controllers/admin_controller.rb:9:in `countall'
+  [1m[36mDemande Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes"[0m
+  ↳ app/controllers/admin_controller.rb:10:in `countall'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 2)[0m
+  ↳ app/controllers/admin_controller.rb:11:in `countall'
+  [1m[36mDemande Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "demandes" WHERE (status = 1)[0m
+  ↳ app/controllers/admin_controller.rb:12:in `countall'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 5973)
+
+
+Started GET "/employees/" for ::1 at 2022-08-20 12:44:07 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 2487)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-20 12:44:07 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a4db68846bb3219bc11c2942c09d7ba731e3a7b5", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (2.2ms) [0m[34mGenerated URL for file at key: 4qpyzhp6mnl1xw276f05zn0uk6nf (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0yMFQxMTo0OTowNy4zMDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--eb2a4f8066acb3650ae74e10d0dd072436c767fe/295828077_169248752302398_7056218145136454370_n.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0yMFQxMTo0OTowNy4zMDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--eb2a4f8066acb3650ae74e10d0dd072436c767fe/295828077_169248752302398_7056218145136454370_n.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 3326)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0yMFQxMTo0OTowNy4zMDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--eb2a4f8066acb3650ae74e10d0dd072436c767fe/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-20 12:44:07 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started GET "/employees/" for ::1 at 2022-08-20 12:44:28 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 2482)
+
+
+Started GET "/employees/" for ::1 at 2022-08-20 12:44:44 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 1.0ms | Allocations: 2483)
+
+
+Started GET "/employees/" for ::1 at 2022-08-20 12:44:55 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 2464)
+
+
+Started GET "/employees/" for ::1 at 2022-08-20 12:45:09 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.8ms | Allocations: 2464)
+
+
+Started GET "/employees/" for ::1 at 2022-08-20 12:45:19 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 2465)
+
+
+Started GET "/employees/" for ::1 at 2022-08-20 12:45:20 +0100
+Processing by AdminController#getallemployees as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/admin_controller.rb:5:in `getallemployees'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `user_image_url'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 2464)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOSEZ3ZVhwb2NEWnRibXd4ZUhjeU56Wm1NRFY2YmpCMWF6WnVaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNJeU9UVTRNamd3TnpkZk1UWTVNalE0TnpVeU16QXlNems0WHpjd05UWXlNVGd4TkRVeE16WTBOVFF6TnpCZmJpNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5UZ3lPREEzTjE4eE5qa3lORGczTlRJek1ESXpPVGhmTnpBMU5qSXhPREUwTlRFek5qUTFORE0zTUY5dUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0wOC0yMFQxMTo0OTowNy4zMDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--eb2a4f8066acb3650ae74e10d0dd072436c767fe/295828077_169248752302398_7056218145136454370_n.jpg" for ::1 at 2022-08-20 12:45:20 +0100
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"295828077_169248752302398_7056218145136454370_n"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 139)
+
+
