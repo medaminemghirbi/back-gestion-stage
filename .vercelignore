@@ -1,0 +1,12 @@
+/.git
+/.github
+/.vercel
+/bin
+/config
+/db
+/lib
+/log
+/public
+/storage
+/test
+/tmp
