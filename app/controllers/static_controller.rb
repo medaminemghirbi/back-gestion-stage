@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
   def home
-    render json: { status: "It's working" }
+    render file: Rails.root.join('public', 'index.html')
   end
 end
